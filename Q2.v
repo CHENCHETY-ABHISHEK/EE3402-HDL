@@ -15,7 +15,7 @@ always @(posedge clock,reset) begin
         end  
         else begin
             case (counter[0]&1)
-                1'b0: begin
+                1'b1: begin
                  m0<=x_0*h_0;         
                  m1<=x_1*h_1;         
                  m2<=x_2*h_2;         
@@ -27,7 +27,7 @@ always @(posedge clock,reset) begin
                  m8<=x_8*h_8;         
                  m9<=x_9*h_9;
                 end
-                1'b1: out <= m0+m1+m2+m3+m4+m5+m6+m7+m8+m9;
+                1'b0: out <= m0+m1+m2+m3+m4+m5+m6+m7+m8+m9;
                 default: out <= 0; 
             endcase
             counter <= counter+1;
